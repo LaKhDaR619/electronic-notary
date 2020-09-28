@@ -54,7 +54,7 @@ export default function MainContent() {
             >
               {requests.map((request) => (
                 <Grid item xs={12}>
-                  <Paper elevation={3} style={{ padding: 10 }}>
+                  <Paper elevation={1} style={{ padding: 10 }}>
                     <Typography style={{ fontWeight: "bold" }}>
                       Send benefit review by Sunday
                     </Typography>
