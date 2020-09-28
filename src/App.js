@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import { Grid, Hidden } from "@material-ui/core";
+import SideBar from "./Components/SideBar";
+import Main from "./Components/Main";
 
 function App() {
+  const [open, toggleOpen] = useState(true);
+
+  const toggleDrawer = () => {
+    toggleOpen(!open);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container wrap="nowrap">
+      <Hidden smDown>
+        <Grid item md={3} xl={2}>
+          <SideBar open={open} />
+        </Grid>
+      </Hidden>
+      <Grid item xs={12} md={9} xl={10}>
+        <Main toggleDrawer={toggleDrawer} />
+      </Grid>
+    </Grid>
   );
 }
 
