@@ -7,34 +7,28 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
-import { Item, Row } from "@mui-treasury/components/flex";
+import { Row } from "@mui-treasury/components/flex";
 
 import { makeStyles } from "@material-ui/core/styles";
+import Calendar from "react-calendar";
+import "../Styles/Calender.css";
+
+import DonutChart from "react-donut-chart";
 
 const useStyles = makeStyles((theme) => ({
-  requestsList: {
-    //height: "calc(100vh - 185px)",
-    [theme.breakpoints.up("sm")]: {
-      overflowY: "scroll",
-      height: "calc(100vh - 188px)",
-    },
-    [theme.breakpoints.down("sm")]: {
-      overflowY: "visible",
-      height: "100%",
-    },
-  },
+  requestsList: {},
 }));
 
 export default function MainContent() {
   const classes = useStyles();
 
-  const requests = [1, 2, 3, 4, 5, 6];
+  const requests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   //const requests = [1, 2];
 
   return (
-    <div style={{ padding: 32, background: "lightgrey" }}>
+    <div style={{ padding: 32 }}>
       <Grid container justify="center" spacing={4}>
-        <Grid item md={8} xs={12}>
+        <Grid item xs={12} md={12} lg={8}>
           <Paper
             style={{
               width: "100%",
@@ -107,12 +101,71 @@ export default function MainContent() {
             </Grid>
           </Paper>
         </Grid>
-        <Grid container direction="row" spacing={2} item md={4} xs={12}>
+        <Grid
+          container
+          spacing={2}
+          alignContent="flex-start"
+          item
+          xs={12}
+          md={12}
+          lg={4}
+        >
           <Grid item xs={12}>
-            <Paper style={{ width: "100%", height: "100%" }}>Stats</Paper>
+            <Paper style={{ height: "400px" }}>
+              <Typography
+                style={{
+                  fontSize: 22,
+                  fontWeight: "bold",
+                  marginLeft: 20,
+                  paddingTop: 15,
+                  marginBottom: 15,
+                }}
+              >
+                Statistics
+              </Typography>
+              <Divider />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: 20,
+                }}
+              >
+                <DonutChart
+                  data={[
+                    {
+                      label: "Pending",
+                      value: 25,
+                      color: "green",
+                    },
+                    {
+                      label: "Completed",
+                      value: 60,
+                    },
+                    {
+                      label: "Rejected",
+                      value: 15,
+                    },
+                  ]}
+                  colors={["orange", "#2ED47A", "red"]}
+                  innerRadius={1}
+                  clickToggle={false}
+                  height="400"
+                  width="400"
+                />
+              </div>
+            </Paper>
           </Grid>
           <Grid item xs={12}>
-            <Paper style={{ width: "100%", height: "100%" }}>Calender</Paper>
+            <Paper
+              style={{
+                height: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Calendar />
+            </Paper>
           </Grid>
         </Grid>
       </Grid>

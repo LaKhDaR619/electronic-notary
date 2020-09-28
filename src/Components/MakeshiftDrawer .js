@@ -6,16 +6,11 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Slide from "@material-ui/core/Slide";
-import InboxIcon from "@material-ui/icons/Inbox";
 
 import { Avatar, Paper, Typography } from "@material-ui/core";
 import { Row, Item } from "@mui-treasury/components/flex";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+const useStyles = makeStyles((theme) => ({}));
 
 const PersonItem = ({ src, name, email }) => {
   return (
@@ -24,7 +19,7 @@ const PersonItem = ({ src, name, email }) => {
         <Avatar src={src} style={{ width: "46px", height: "46px" }} />
       </Item>
       <Item alignItems="center">
-        <Typography variant="h7" style={{ lineHeight: 1, fontWeight: "bold" }}>
+        <Typography style={{ lineHeight: 1, fontWeight: "bold" }}>
           {name}
         </Typography>
         <Typography
@@ -48,54 +43,50 @@ export default function MakeshiftDrawer({ open, items }) {
   }
 
   return (
-    <Slide
-      direction="right"
-      in={open}
-      mountOnEnter
-      unmountOnExit
-      style={{ width: "100%" }}
-    >
-      <Paper style={{ height: "100vh" }} elevation={3}>
-        <div className={classes.root}>
-          <Row gap={2} alignItems="center" height="50px">
-            <Item>
-              <img
-                src={require("../images/profile.jpg")}
-                style={{ height: "30px" }}
-              ></img>
-            </Item>
-            <Item>
-              <Typography variant="body2" style={{ fontWeight: "bold" }}>
-                Electronic Notary
-              </Typography>
-            </Item>
-          </Row>
-          <Divider />
-          <PersonItem
-            name="Khalloufi Amar"
-            email="s.ferguson@gmail.com"
-            src={require("../images/profile.jpg")}
-          />
-          <List component="nav" aria-label="main mailbox folders">
-            {items.map((item) => (
-              <ListItem
-                button
-                selected={false}
-                onClick={(event) => handleListItemClick(event, 0)}
-              >
-                <ListItemIcon style={{ minWidth: "40px" }}>
-                  {item.icon ? item.icon : null}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  primaryTypographyProps={{
-                    style: { fontSize: "13px", fontWeight: "bold" },
-                  }}
-                />
-              </ListItem>
-            ))}
-          </List>
-        </div>
+    <Slide direction="right" in={open} mountOnEnter unmountOnExit>
+      <Paper elevation={3}>
+        <Row gap={2} alignItems="center" height="50px">
+          <Item>
+            <img
+              src={require("../images/profile.jpg")}
+              style={{ height: "30px" }}
+            ></img>
+          </Item>
+          <Item>
+            <Typography variant="body2" style={{ fontWeight: "bold" }}>
+              Electronic Notary
+            </Typography>
+          </Item>
+        </Row>
+        <Divider />
+        <PersonItem
+          name="Khalloufi Amar"
+          email="s.ferguson@gmail.com"
+          src={require("../images/profile.jpg")}
+        />
+        <List
+          component="nav"
+          aria-label="main mailbox folders"
+          style={{ height: "calc(100vh - 129px)", overflowY: "scroll" }}
+        >
+          {items.map((item) => (
+            <ListItem
+              button
+              selected={false}
+              onClick={(event) => handleListItemClick(event, 0)}
+            >
+              <ListItemIcon style={{ minWidth: "40px" }}>
+                {item.icon ? item.icon : null}
+              </ListItemIcon>
+              <ListItemText
+                primary={item.text}
+                primaryTypographyProps={{
+                  style: { fontSize: "13px", fontWeight: "bold" },
+                }}
+              />
+            </ListItem>
+          ))}
+        </List>
       </Paper>
     </Slide>
   );

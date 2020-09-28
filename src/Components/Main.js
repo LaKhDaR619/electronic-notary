@@ -11,7 +11,12 @@ import MainContent from "./MainContent";
 export default function Main() {
   return (
     <div>
-      <Row height="50px" gap={2} alignItems="center">
+      <Row
+        height="50px"
+        gap={2}
+        alignItems="center"
+        style={{ background: "white" }}
+      >
         <Item grow>
           <Row alignItems="center">
             <Item>

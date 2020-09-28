@@ -4,6 +4,7 @@ import MakeshiftDrawer from "./MakeshiftDrawer ";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
 import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined";
+import { Divider } from "@material-ui/core";
 
 export default function SideBar({ open }) {
   return (

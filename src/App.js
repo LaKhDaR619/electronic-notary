@@ -18,7 +18,17 @@ function App() {
           <SideBar open={open} />
         </Grid>
       </Hidden>
-      <Grid item xs={12} md={9} xl={10}>
+      <Grid
+        item
+        xs={12}
+        md={9}
+        xl={10}
+        style={{
+          height: "100vh",
+          overflowY: "scroll",
+          background: "lightgrey",
+        }}
+      >
         <Main toggleDrawer={toggleDrawer} />
       </Grid>
     </Grid>
