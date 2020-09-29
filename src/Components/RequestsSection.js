@@ -12,8 +12,8 @@ import {
 } from "@material-ui/core";
 
 export default function RequestsSection() {
-  //const requests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const requests = [1, 2];
+  const requests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  //const requests = [1, 2];
 
   const isSmall = false;
 
