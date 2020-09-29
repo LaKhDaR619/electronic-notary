@@ -34,12 +34,7 @@ export default function RequestsSection() {
           height: 5,
         }}
       />
-      <Grid
-        container
-        spacing={isSmall ? 1 : 2}
-        alignContent="flex-start"
-        //className={classes.requestsList}
-      >
+      <Grid container spacing={isSmall ? 1 : 2} alignContent="flex-start">
         {requests.map((request) => (
           <Grid item xs={12} key={request}>
             <Paper elevation={1} style={{ padding: 10 }}>

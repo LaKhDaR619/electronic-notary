@@ -20,7 +20,7 @@ export default function MainContent() {
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <div style={{ padding: isSmall ? 8 : 32 }}>
+    <div style={{ padding: isSmall ? 8 : 32, marginTop: "50px" }}>
       <Grid container justify="center" spacing={isSmall ? 1 : 4}>
         <Grid item xs={12} md={12} lg={8}>
           <RequestsSection />

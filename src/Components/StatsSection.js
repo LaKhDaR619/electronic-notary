@@ -4,14 +4,7 @@ import DonutChart from "react-donut-chart";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 
-import {
-  Avatar,
-  Button,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-} from "@material-ui/core";
+import { Divider, Grid, Paper, Typography } from "@material-ui/core";
 
 export default function StatsSection() {
   const [date, changeDate] = useState(new Date());
