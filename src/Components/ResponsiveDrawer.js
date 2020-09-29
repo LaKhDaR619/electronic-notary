@@ -90,11 +90,7 @@ function ResponsiveDrawer(props) {
         email="s.ferguson@gmail.com"
         src={require("../images/profile.jpg")}
       />
-      <List
-        component="nav"
-        aria-label="main mailbox folders"
-        style={{ height: "calc(100vh - 129px)", overflowY: "scroll" }}
-      >
+      <List style={{ height: "100%", overflowY: "scroll" }}>
         {items.map((item, index) => (
           <ListItem button selected={false} key={index}>
             <ListItemIcon style={{ minWidth: "40px" }}>

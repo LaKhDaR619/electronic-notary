@@ -65,6 +65,7 @@ export default function StatsSection() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            marginTop: "8px",
           }}
         >
           <div style={{ maxWidth: isSmall ? "310px" : "100%" }}>
