@@ -29,14 +29,15 @@ export default function StatsSection() {
           <Divider />
           <div
             style={{
-              width: "100%",
               display: "flex",
+              width: "100%",
+              height: "100%",
               justifyContent: "center",
               alignItems: "center",
               overflow: "hidden",
             }}
           >
-            <div style={{ padding: 30 }}>
+            <div>
               <Doughnut
                 data={{
                   labels: ["Completed", "Pending", "Rejected"],
@@ -47,8 +48,8 @@ export default function StatsSection() {
                     },
                   ],
                 }}
-                width={350}
-                height={300}
+                width={340}
+                height={240}
                 options={{ maintainAspectRatio: false, cutoutPercentage: 80 }}
               />
             </div>
