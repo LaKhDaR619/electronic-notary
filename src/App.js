@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-import { Grid, Hidden } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
+
 import SideBar from "./Components/SideBar";
 import Main from "./Components/Main";
 
@@ -12,15 +14,15 @@ function App() {
   };
 
   return (
-    <Grid container wrap="nowrap">
-      <Hidden smDown>
-        <Grid item md={3} xl={2}>
+    <Grid container>
+      <Hidden smDown={!open}>
+        <Grid item xs={12} md={3} xl={2} style={{ position: "absolute" }}>
           <SideBar open={open} />
         </Grid>
       </Hidden>
       <Grid
         item
-        xs={12}
+        xs={open ? 0 : 12}
         md={9}
         xl={10}
         style={{

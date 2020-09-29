@@ -26,7 +26,7 @@ export default function Main() {
               <InputBase
                 placeholder="Global Search"
                 inputProps={{ "aria-label": "search" }}
-                color="white"
+                color="primary"
               />
             </Item>
           </Row>

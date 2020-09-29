@@ -69,11 +69,12 @@ export default function MakeshiftDrawer({ open, items }) {
           aria-label="main mailbox folders"
           style={{ height: "calc(100vh - 129px)", overflowY: "scroll" }}
         >
-          {items.map((item) => (
+          {items.map((item, index) => (
             <ListItem
               button
               selected={false}
               onClick={(event) => handleListItemClick(event, 0)}
+              key={index}
             >
               <ListItemIcon style={{ minWidth: "40px" }}>
                 {item.icon ? item.icon : null}
