@@ -48,7 +48,7 @@ export default function StatsSection() {
                     },
                   ],
                 }}
-                width={340}
+                width={335}
                 height={240}
                 options={{ maintainAspectRatio: false, cutoutPercentage: 80 }}
               />
