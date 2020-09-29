@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
-import DonutChart from "react-donut-chart";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 
 import { Divider, Grid, Paper, Typography } from "@material-ui/core";
+
+import { Doughnut } from "react-chartjs-2";
 
 export default function StatsSection() {
   const [date, changeDate] = useState(new Date());
@@ -29,33 +29,29 @@ export default function StatsSection() {
           <Divider />
           <div
             style={{
+              width: "100%",
               display: "flex",
               justifyContent: "center",
-              padding: 20,
+              alignItems: "center",
+              overflow: "hidden",
             }}
           >
-            <DonutChart
-              data={[
-                {
-                  label: "Pending",
-                  value: 25,
-                  color: "green",
-                },
-                {
-                  label: "Completed",
-                  value: 60,
-                },
-                {
-                  label: "Rejected",
-                  value: 15,
-                },
-              ]}
-              colors={["orange", "#2ED47A", "red"]}
-              innerRadius={1}
-              clickToggle={false}
-              height={400}
-              width={400}
-            />
+            <div style={{ padding: 30 }}>
+              <Doughnut
+                data={{
+                  labels: ["Completed", "Pending", "Rejected"],
+                  datasets: [
+                    {
+                      data: [60, 25, 15],
+                      backgroundColor: ["#2ED47A", "#36A2EB", "#FF6384"],
+                    },
+                  ],
+                }}
+                width={350}
+                height={300}
+                options={{ maintainAspectRatio: false, cutoutPercentage: 80 }}
+              />
+            </div>
           </div>
         </Paper>
       </Grid>
